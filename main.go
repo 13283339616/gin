@@ -1,10 +1,10 @@
 package main
 
 import (
-	"controller"
+	"github.com/13283339616/controller"
+	"github.com/13283339616/middleware"
 	"github.com/gin-gonic/gin"
 	"log"
-	"middleware"
 	"net/http"
 )
 

@@ -1,7 +1,9 @@
 package vo
 
-type loginRequestVo struct {
+type LoginRequestVo struct {
+	Username string `json:"username" validate:"required,max=32"`
+	Password string `json:"password" validate:"required,max=32"`
 }
 
-type loginResponseVo struct {
+type LoginResponseVo struct {
 }
