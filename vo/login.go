@@ -6,4 +6,5 @@ type LoginRequestVo struct {
 }
 
 type LoginResponseVo struct {
+	Token string `json:"token"`
 }

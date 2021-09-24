@@ -24,17 +24,12 @@ func Index(c *gin.Context) {
 	_ = json.Unmarshal(b, loginRequestVo)
 	err, m := baseRes.ResponseValid(loginRequestVo)
 	s := service.HelloService{}
-	s.Index(*loginRequestVo)
-	var msg struct {
-		Code    int
-		Message string
-		Data    interface{}
-	}
-	msg.Code = 200
-
+	token, err := s.Index(*loginRequestVo)
 	if err != nil {
 		c.JSON(http.StatusOK, baseRes.ResponseError(m))
 	} else {
-		c.JSON(http.StatusOK, baseRes.ResponseSuccess(msg))
+		responseVo := vo.LoginResponseVo{}
+		responseVo.Token = token
+		c.JSON(http.StatusOK, baseRes.ResponseSuccess(responseVo))
 	}
 }
