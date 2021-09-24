@@ -3,6 +3,7 @@ module controller
 go 1.17
 
 require (
+	github.com/13283339616/service v0.0.0
 	github.com/13283339616/vo v0.0.0
 	github.com/gin-gonic/gin v1.7.4
 	github.com/go-playground/locales v0.14.0
@@ -25,4 +26,7 @@ require (
 	gopkg.in/yaml.v2 v2.2.8 // indirect
 )
 
-replace github.com/13283339616/vo => ../vo
+replace (
+	github.com/13283339616/service => ../service
+	github.com/13283339616/vo => ../vo
+)
